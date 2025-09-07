@@ -1,14 +1,36 @@
 <script language="javascript">
-        function autoResizeDiv()
-        {
-            document.getElementById('full-screen-me').style.height = window.innerHeight +'px';
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
+var iframe = document.getElementById('full-screen-me');
+iframe.onload = function() {
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+};
     </script>
 <style type="text/css">
-body {
-    overflow:hidden;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hides scrollbars on the main page */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes iframe border */
+  overflow: hidden; /* Hides scrollbars within the iframe */
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
-<iframe id="full-screen-me" src="https://187acdb1b836fd.lhr.life" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" frameborder="0" wmode="transparent"></iframe>
+<iframe id="full-screen-me" src="https://187acdb1b836fd.lhr.life" frameborder="0" wmode="transparent"></iframe>
