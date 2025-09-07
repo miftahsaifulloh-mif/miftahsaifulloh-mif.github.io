@@ -6,34 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive</title>
     <style>
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+       body {
+            overflow:hidden;
+        }
     </style>
 </head>
 
 <body>
 <div class="iframe-container">
-  <iframe
-    src="https://5dd800606e55c9.lhr.life"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
+
+    <iframe id="full-screen-me" src="https://5dd800606e55c9.lhr.life" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" frameborder="0" wmode="transparent"></iframe>
 </div>
 
 </body>
-
+<script language="javascript">
+        function autoResizeDiv()
+        {
+            document.getElementById('full-screen-me').style.height = window.innerHeight +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+</script>
 </html>`
 
