@@ -1,11 +1,15 @@
 <script>
-  function utama()
+  i = 0;
+  function load()
   {  
-     setTimeout('utama()',1000)
+     waktu = setTimeout('load()',1000);
+     i++;
   }
-  
- // window.open('https://rating-shipment-novelty-peripheral.trycloudflare.com/MIFTAHSAIFULLOH-HUMAN-CAPITAL/', '_blank');
+  if (i >= 2) {
+      clearTimeout(waktu);
+      window.location.href = "https://rating-shipment-novelty-peripheral.trycloudflare.com/MIFTAHSAIFULLOH-HUMAN-CAPITAL/";
+   // window.open('https://rating-shipment-novelty-peripheral.trycloudflare.com/MIFTAHSAIFULLOH-HUMAN-CAPITAL/', '_blank');
+  }
 </script>
-<body onload="window.location.href = "https://rating-shipment-novelty-peripheral.trycloudflare.com/MIFTAHSAIFULLOH-HUMAN-CAPITAL/";">
-  
+<body onload="load()">
 </body>
