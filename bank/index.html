@@ -1,13 +1,14 @@
 <script>
- function serviceClient(url) {
-        return fetch(url).then(res => res.text());
- }
-
- serviceClient('https://pharmacology-paxil-wright-heating.trycloudflare.com')
-        .then(data => {
-             window.location.assign("https://pharmacology-paxil-wright-heating.trycloudflare.com/MIFTAHSAIFULLOH-BANK/");
-        })
-        .catch(error => {
-             window.location.assign("https://miftahsaifulloh-mif.github.io/server-localhost/");
- });
+fetch('https://pharmacology-paxil-wright-heating.trycloudflare.com')
+  .then(response => {
+    if (!response.ok) {
+       window.location.assign("https://miftahsaifulloh-mif.github.io/server-localhost/");
+    }
+    if (response.ok) {
+      window.location.assign("https://pharmacology-paxil-wright-heating.trycloudflare.com/MIFTAHSAIFULLOH-BANK/");
+    }
+  })
+  .catch(error => {
+     window.location.assign("https://miftahsaifulloh-mif.github.io/server-localhost/");
+  });
 </script>
