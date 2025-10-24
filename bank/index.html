@@ -10,11 +10,14 @@ rawFile.onreadystatechange = async function () {
 	try {
        		const response = await fetch(allText, { mode : 'no-cors'});
     		if (!response.ok) {
-       		    window.location.assign("https://miftahsaifulloh-mif.github.io/callmip/");
+				document.writeln(response);
+       		  //  window.location.assign("https://miftahsaifulloh-mif.github.io/callmip/");
     		}
-    		window.location.assign(allText+"MIFTAHSAIFULLOH-BANK/");
+		document.writeln(response);
+    		//window.location.assign(allText+"MIFTAHSAIFULLOH-BANK/");
   	} catch (error) {
-    		window.location.assign("https://miftahsaifulloh-mif.github.io/callmip/");
+		document.writeln(error);
+    		//window.location.assign("https://miftahsaifulloh-mif.github.io/callmip/");
   	}
      }
   }
